@@ -8,25 +8,21 @@ public class GiveSymptomsList extends ReadSymptomDataFromFile {
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
      */
-    public GiveSymptomsList(String filepath) {
-        super(filepath);
-    }
+    public GiveSymptomsList(String filepath) { super(filepath); }
 
-    public List<String> GetSymptomsList() {
+    protected List<String> GetSymptomsList() {
 
-        ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("C:/Users/ahallier/IdeaProjects/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt");
-        List<String> symptoms = readSymptomDataFromFile.GetSymptoms();
+        List<String> symptoms = super.GetSymptoms();
 
-        int symptomsSize = symptoms.size();
-        ArrayList<String> SymptomsList = new ArrayList<String>();
+        ArrayList<String> symptomsList = new ArrayList<String>();
 
-        for (int i = 0; i < symptomsSize; i++) {
-            if (!(SymptomsList).contains(symptoms.get(i))) {
-                SymptomsList.add(symptoms.get(i));
+        for (int i = 0; i < symptoms.size(); i++) {
+            if (!(symptomsList).contains(symptoms.get(i))) {
+                symptomsList.add(symptoms.get(i));
             }
         }
 
-        return SymptomsList;
+        return symptomsList;
     }
 
 }

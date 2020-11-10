@@ -14,13 +14,10 @@ public class CountSymptoms extends GiveSymptomsList {
         super(filepath);
     }
 
-    public Map<String, Integer> GetSymptomsCount() {
+    protected Map<String, Integer> GetSymptomsCount() {
 
-        ReadSymptomDataFromFile readSymptomDataFromFile = new ReadSymptomDataFromFile("C:/Users/ahallier/IdeaProjects/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt");
-        List<String> symptoms = readSymptomDataFromFile.GetSymptoms();
-
-        GiveSymptomsList giveSymptomsList = new GiveSymptomsList("C:/Users/ahallier/IdeaProjects/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt");
-        List<String> symptomsList = giveSymptomsList.GetSymptomsList();
+        List<String> symptoms = super.GetSymptoms();
+        List<String> symptomsList = super.GetSymptomsList();
 
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();
 
@@ -37,7 +34,5 @@ public class CountSymptoms extends GiveSymptomsList {
         return symptomsCount;
 
     }
-
-
 
 }
