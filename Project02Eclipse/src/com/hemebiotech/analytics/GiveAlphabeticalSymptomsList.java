@@ -4,6 +4,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Read an ArrayList of the symptoms and eliminate duplications of symptoms in this list
+ *
+ * Order the list of the symptoms alphabetically
+ */
 public class GiveAlphabeticalSymptomsList extends ReadSymptomDataFromFile {
 
     /**
@@ -11,6 +16,9 @@ public class GiveAlphabeticalSymptomsList extends ReadSymptomDataFromFile {
      */
     public GiveAlphabeticalSymptomsList(String filepath) { super(filepath); }
 
+    /**
+     * @return an ArrayList of the different symptoms order alphabetically
+     */
     protected List<String> GetAlphabeticalSymptomsList() {
 
         List<String> symptoms = super.GetSymptoms();

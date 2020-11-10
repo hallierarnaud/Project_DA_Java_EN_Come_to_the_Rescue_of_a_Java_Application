@@ -4,6 +4,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Generate a text file from a Map of the list of each symptom associated with their
+ * number of occurrence
+ *
+ * The text file is named "result.txt"
+ */
 public class GenerateOutputTextfile extends CountSymptoms {
 
     /**
@@ -11,6 +17,9 @@ public class GenerateOutputTextfile extends CountSymptoms {
      */
     public GenerateOutputTextfile(String filepath) { super(filepath); }
 
+    /**
+     * @return a text file of the list of each symptom associated with their number of occurrence
+     */
     protected FileWriter GetOutputTextfile() {
 
         Map<String, Integer> symptomsCount = super.GetSymptomsCount();

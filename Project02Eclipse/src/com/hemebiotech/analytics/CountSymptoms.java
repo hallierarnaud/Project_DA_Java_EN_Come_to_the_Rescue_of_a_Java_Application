@@ -4,6 +4,9 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Count the number of occurrence of each symptoms in the source ArrayList of the symptoms
+ */
 public class CountSymptoms extends GiveAlphabeticalSymptomsList {
 
     /**
@@ -13,6 +16,10 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
         super(filepath);
     }
 
+    /**
+     * @return a Map of the different symptoms order alphabetically associated with their
+     * number of occurrence
+     */
     protected Map<String, Integer> GetSymptomsCount() {
 
         List<String> symptoms = super.GetSymptoms();
@@ -21,11 +28,11 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();
 
         for (int i = 0; i < symptomsList.size(); i++) {
-            int occurenceNumber = 1;
+            int occurrenceNumber = 1;
             for (int j = 0; j < symptoms.size(); j++) {
                 if (symptomsList.get(i).equals(symptoms.get(j))) {
-                    symptomsCount.put(symptomsList.get(i), occurenceNumber);
-                    occurenceNumber++;
+                    symptomsCount.put(symptomsList.get(i), occurrenceNumber);
+                    occurrenceNumber++;
                 }
             }
         }

@@ -1,5 +1,10 @@
 package com.hemebiotech.analytics;
 
+/**
+ * Generate a text file of a list of symptoms with their occurrence named "result.txt"
+ *
+ * The path of the source file of the symptoms must be furnished
+ */
 public class AnalyticsCounter extends GenerateOutputTextfile {
 
 	/**
