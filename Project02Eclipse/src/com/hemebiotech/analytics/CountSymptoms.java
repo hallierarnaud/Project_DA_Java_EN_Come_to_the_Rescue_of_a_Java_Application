@@ -1,11 +1,10 @@
 package com.hemebiotech.analytics;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-public class CountSymptoms extends GiveSymptomsList {
+public class CountSymptoms extends GiveAlphabeticalSymptomsList {
 
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
@@ -17,7 +16,7 @@ public class CountSymptoms extends GiveSymptomsList {
     protected Map<String, Integer> GetSymptomsCount() {
 
         List<String> symptoms = super.GetSymptoms();
-        List<String> symptomsList = super.GetSymptomsList();
+        List<String> symptomsList = super.GetAlphabeticalSymptomsList();
 
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();
 
