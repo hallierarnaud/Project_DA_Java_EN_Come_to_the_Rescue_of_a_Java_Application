@@ -2,9 +2,7 @@ package com.hemebiotech.analytics;
 
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Map;
-import java.util.Set;
 
 public class GenerateOutputTextfile extends CountSymptoms {
 
@@ -13,18 +11,23 @@ public class GenerateOutputTextfile extends CountSymptoms {
      */
     public GenerateOutputTextfile(String filepath) { super(filepath); }
 
-    protected FileWriter GetOutputTextfile() throws IOException {
+    protected FileWriter GetOutputTextfile() {
 
         Map<String, Integer> symptomsCount = super.GetSymptomsCount();
+        FileWriter writer = null;
 
-        FileWriter writer = new FileWriter("result.txt");
+        try {
+            writer = new FileWriter("result.txt");
 
-		// Map.entrySet() method
-        for (Map.Entry entry : symptomsCount.entrySet()) {
-		    writer.write(entry.getKey() + "=" + entry.getValue() + "\r\n");
+            // Map.entrySet() method
+            for (Map.Entry entry : symptomsCount.entrySet()) {
+                writer.write(entry.getKey() + " = " + entry.getValue() + "\r\n");
+            }
+            writer.close();
+
+        } catch (IOException e) {
+            System.out.println("Impossible de créer le fichier de sortie.");
         }
-
-		writer.close();
 
         return writer;
 

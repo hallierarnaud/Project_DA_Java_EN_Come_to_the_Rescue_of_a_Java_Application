@@ -37,7 +37,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 				}
 				reader.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				System.out.println("Le chemin d'accès spécifié pour le fichier source est erroné.");
 			}
 		}
 		
