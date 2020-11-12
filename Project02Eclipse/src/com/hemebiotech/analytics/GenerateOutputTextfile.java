@@ -1,5 +1,6 @@
 package com.hemebiotech.analytics;
 
+import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Map;
@@ -20,16 +21,16 @@ public class GenerateOutputTextfile extends CountSymptoms {
     /**
      * @return a text file of the list of each symptom associated with their number of occurrence
      */
-    protected FileWriter GetOutputTextfile() {
+    protected BufferedWriter GetOutputTextfile() {
 
         Map<String, Integer> symptomsCount = super.GetSymptomsCount();
-        FileWriter writer = null;
+        BufferedWriter writer = null;
 
         // Catch the exception generated when the output stream can't be created
         try {
             // Writes text to a character-output stream, buffering characters so as to provide
             // for the efficient writing of single characters, arrays, and strings
-            writer = new FileWriter("result.txt");
+             writer = new BufferedWriter(new FileWriter("result.txt"));
 
             // Return a Set view of the mappings contained in the map
             for (Map.Entry entry : symptomsCount.entrySet()) {
