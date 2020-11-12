@@ -25,12 +25,15 @@ public class GiveAlphabeticalSymptomsList extends ReadSymptomDataFromFile {
 
         ArrayList<String> alphabeticalSymptomsList = new ArrayList<String>();
 
+        // Add a new symptom present in a first ArrayList construct with the input stream
+        // to a second ArrayList if the symptom is not already present
         for (int i = 0; i < symptoms.size(); i++) {
             if (!(alphabeticalSymptomsList).contains(symptoms.get(i))) {
                 alphabeticalSymptomsList.add(symptoms.get(i));
             }
         }
 
+        // Order the symptoms alphabetically in the ArrayList
         Collections.sort(alphabeticalSymptomsList);
 
         return alphabeticalSymptomsList;

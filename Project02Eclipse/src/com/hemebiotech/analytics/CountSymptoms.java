@@ -25,8 +25,12 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
         List<String> symptoms = super.GetSymptoms();
         List<String> symptomsList = super.GetAlphabeticalSymptomsList();
 
+        // Declare and initialize a LinkedHashMap to keep alphabetical order
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();
 
+        // Count the occurrence of each symptom present in a first ArrayList construct
+        // with the input stream
+        // Add each symptom and their occurrence in a Map
         for (int i = 0; i < symptomsList.size(); i++) {
             int occurrenceNumber = 1;
             for (int j = 0; j < symptoms.size(); j++) {

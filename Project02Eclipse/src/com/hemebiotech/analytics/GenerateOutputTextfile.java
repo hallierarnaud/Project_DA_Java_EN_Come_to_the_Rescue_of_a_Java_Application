@@ -25,13 +25,18 @@ public class GenerateOutputTextfile extends CountSymptoms {
         Map<String, Integer> symptomsCount = super.GetSymptomsCount();
         FileWriter writer = null;
 
+        // Catch the exception generated when the output stream can't be created
         try {
+            // Writes text to a character-output stream, buffering characters so as to provide
+            // for the efficient writing of single characters, arrays, and strings
             writer = new FileWriter("result.txt");
 
-            // Map.entrySet() method
+            // Return a Set view of the mappings contained in the map
             for (Map.Entry entry : symptomsCount.entrySet()) {
                 writer.write(entry.getKey() + " = " + entry.getValue() + "\r\n");
             }
+
+            // Close the stream and releases any system resources associated with it
             writer.close();
 
         } catch (IOException e) {
@@ -39,7 +44,6 @@ public class GenerateOutputTextfile extends CountSymptoms {
         }
 
         return writer;
-
     }
 
 }

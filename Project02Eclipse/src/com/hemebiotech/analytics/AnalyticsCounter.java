@@ -16,6 +16,7 @@ public class AnalyticsCounter extends GenerateOutputTextfile {
 
 	public static void main(String args[]) {
 
+		// Generate the output text file from an input stream whose path must be specified
 		GenerateOutputTextfile generateOutputTextfile = new GenerateOutputTextfile("C:/Users/ahallier/IdeaProjects/Project_DA_Java_EN_Come_to_the_Rescue_of_a_Java_Application/Project02Eclipse/symptoms.txt");
 		generateOutputTextfile.GetOutputTextfile();
 
