@@ -20,10 +20,10 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
      * @return a Map of the different symptoms order alphabetically associated with their
      * number of occurrence
      */
-    protected Map<String, Integer> GetSymptomsCount() {
+    protected Map<String, Integer> getSymptomsCount() {
 
-        List<String> symptoms = super.GetSymptoms();
-        List<String> symptomsList = super.GetAlphabeticalSymptomsList();
+        List<String> symptoms = super.getSymptoms();
+        List<String> symptomsList = super.getAlphabeticalSymptomsList();
 
         // Declare and initialize a LinkedHashMap to keep alphabetical order
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();

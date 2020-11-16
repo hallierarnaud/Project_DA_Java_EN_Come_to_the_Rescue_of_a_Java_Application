@@ -26,7 +26,7 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 
 	// Enable to override the method GetSymptoms()
 	@Override
-	public List<String> GetSymptoms() {
+	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
 
 		// Check that the input stream is not null

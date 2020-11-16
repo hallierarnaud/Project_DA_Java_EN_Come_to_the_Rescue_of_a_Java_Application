@@ -19,9 +19,9 @@ public class GiveAlphabeticalSymptomsList extends ReadSymptomDataFromFile {
     /**
      * @return an ArrayList of the different symptoms order alphabetically
      */
-    protected List<String> GetAlphabeticalSymptomsList() {
+    protected List<String> getAlphabeticalSymptomsList() {
 
-        List<String> symptoms = super.GetSymptoms();
+        List<String> symptoms = super.getSymptoms();
 
         ArrayList<String> alphabeticalSymptomsList = new ArrayList<String>();
 

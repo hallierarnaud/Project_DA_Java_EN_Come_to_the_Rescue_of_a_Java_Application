@@ -11,21 +11,21 @@ import java.util.Map;
  *
  * The text file is named "result.txt"
  */
-public class GenerateOutputTextfile extends CountSymptoms {
+public class GenerateOutputTextFile extends CountSymptoms {
 
     public static final String OUTPUT_FILE = "result.txt";
 
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
      */
-    public GenerateOutputTextfile(String filepath) { super(filepath); }
+    public GenerateOutputTextFile(String filepath) { super(filepath); }
 
     /**
      * @return a text file of the list of each symptom associated with their number of occurrence
      */
-    protected BufferedWriter GetOutputTextfile() {
+    protected BufferedWriter getOutputTextFile() {
 
-        Map<String, Integer> symptomsCount = super.GetSymptomsCount();
+        Map<String, Integer> symptomsCount = super.getSymptomsCount();
         BufferedWriter writer = null;
 
         // Catch the exception generated when the output stream can't be created
