@@ -7,6 +7,8 @@ package com.hemebiotech.analytics;
  */
 public class AnalyticsCounter extends GenerateOutputTextfile {
 
+	public static final String INPUT_DATA = "symptoms.txt";
+
 	/**
 	 * @param filepath a full or partial path to file with symptom strings in it, one per line
 	 */
@@ -17,7 +19,7 @@ public class AnalyticsCounter extends GenerateOutputTextfile {
 	public static void main(String args[]) {
 
 		// Generate the output text file from an input stream whose path must be specified
-		GenerateOutputTextfile generateOutputTextfile = new GenerateOutputTextfile("symptoms.txt");
+		GenerateOutputTextfile generateOutputTextfile = new GenerateOutputTextfile(INPUT_DATA);
 		generateOutputTextfile.GetOutputTextfile();
 
 	}

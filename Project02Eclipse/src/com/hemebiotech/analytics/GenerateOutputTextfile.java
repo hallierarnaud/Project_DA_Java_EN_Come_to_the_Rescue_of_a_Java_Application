@@ -13,6 +13,8 @@ import java.util.Map;
  */
 public class GenerateOutputTextfile extends CountSymptoms {
 
+    public static final String OUTPUT_FILE = "result.txt";
+
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
      */
@@ -30,7 +32,7 @@ public class GenerateOutputTextfile extends CountSymptoms {
         try {
             // Writes text to a character-output stream, buffering characters so as to provide
             // for the efficient writing of single characters, arrays, and strings
-             writer = new BufferedWriter(new FileWriter("result.txt"));
+             writer = new BufferedWriter(new FileWriter(OUTPUT_FILE));
 
             // Return a Set view of the mappings contained in the map
             for (Map.Entry entry : symptomsCount.entrySet()) {
