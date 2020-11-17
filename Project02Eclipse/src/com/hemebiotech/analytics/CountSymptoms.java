@@ -23,6 +23,10 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
     protected Map<String, Integer> getSymptomsCount() {
 
         List<String> symptoms = super.getSymptoms();
+        if (symptoms == null) {
+            return null;
+        }
+
         List<String> symptomsList = super.getAlphabeticalSymptomsList();
 
         // Declare and initialize a LinkedHashMap to keep alphabetical order

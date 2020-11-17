@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class GenerateOutputTextFile extends CountSymptoms {
 
-    public static final String OUTPUT_FILE = "result.txt";
+    public static final String OUTPUT_FILE = "C:/result.txt";
 
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
@@ -26,6 +26,10 @@ public class GenerateOutputTextFile extends CountSymptoms {
     protected BufferedWriter getOutputTextFile() {
 
         Map<String, Integer> symptomsCount = super.getSymptomsCount();
+        if (symptomsCount == null) {
+            return null;
+        }
+
         BufferedWriter writer = null;
 
         // Catch the exception generated when the output stream can't be created
@@ -43,7 +47,8 @@ public class GenerateOutputTextFile extends CountSymptoms {
             writer.close();
 
         } catch (IOException e) {
-            System.out.println("Impossible de créer le fichier de sortie.");
+            System.err.println("Impossible de creer le fichier de sortie.");
+            return null;
         }
 
         return writer;
