@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class GenerateOutputTextFile extends CountSymptoms {
 
-    public static final String OUTPUT_FILE = "result.txt";
+    public static final String OUTPUT_FILE = "results.out";
 
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
