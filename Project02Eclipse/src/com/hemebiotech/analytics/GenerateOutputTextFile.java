@@ -13,7 +13,7 @@ import java.util.Map;
  */
 public class GenerateOutputTextFile extends CountSymptoms {
 
-    public static final String OUTPUT_FILE = "C:/result.txt";
+    public static final String OUTPUT_FILE = "result.txt";
 
     /**
      * @param filepath a full or partial path to file with symptom strings in it, one per line
@@ -26,26 +26,26 @@ public class GenerateOutputTextFile extends CountSymptoms {
     protected BufferedWriter getOutputTextFile() {
 
         Map<String, Integer> symptomsCount = super.getSymptomsCount();
+        // To have the fail fast
         if (symptomsCount == null) {
             return null;
         }
 
         BufferedWriter writer = null;
 
-        // Catch the exception generated when the output stream can't be created
         try {
-            // Writes text to a character-output stream, buffering characters so as to provide
-            // for the efficient writing of single characters, arrays, and strings
+            // Writes text to an output stream
              writer = new BufferedWriter(new FileWriter(OUTPUT_FILE));
 
             // Return a Set view of the mappings contained in the map
             for (Map.Entry entry : symptomsCount.entrySet()) {
-                writer.write(entry.getKey() + " = " + entry.getValue() + "\r\n");
+                writer.write(entry.getKey() + " = " + entry.getValue() + "\n");
             }
 
-            // Close the stream and releases any system resources associated with it
             writer.close();
 
+        // Catch the exception generated when the output stream can't be created
+        // and introduce a fail fast
         } catch (IOException e) {
             System.err.println("Impossible de creer le fichier de sortie.");
             return null;

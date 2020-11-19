@@ -18,7 +18,7 @@ public class AnalyticsCounter extends GenerateOutputTextFile {
 
 	public static void main(String args[]) {
 
-		// Generate the output text file from an input stream whose path must be specified
+		// Generate an output text file from an input stream
 		GenerateOutputTextFile generateOutputTextfile = new GenerateOutputTextFile(INPUT_DATA);
 		generateOutputTextfile.getOutputTextFile();
 

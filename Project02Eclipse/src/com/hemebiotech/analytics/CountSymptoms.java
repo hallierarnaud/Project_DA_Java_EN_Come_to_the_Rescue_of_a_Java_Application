@@ -23,18 +23,17 @@ public class CountSymptoms extends GiveAlphabeticalSymptomsList {
     protected Map<String, Integer> getSymptomsCount() {
 
         List<String> symptoms = super.getSymptoms();
+        // To have the fail fast
         if (symptoms == null) {
             return null;
         }
 
         List<String> symptomsList = super.getAlphabeticalSymptomsList();
 
-        // Declare and initialize a LinkedHashMap to keep alphabetical order
         Map<String, Integer> symptomsCount = new LinkedHashMap<String, Integer>();
 
-        // Count the occurrence of each symptom present in a first ArrayList construct
-        // with the input stream
-        // Add each symptom and their occurrence in a Map
+        // Count the occurrence of each symptom present in the ArrayList construct
+        // with the input stream and add each symptom and their occurrence in a Map
         for (int i = 0; i < symptomsList.size(); i++) {
             int occurrenceNumber = 1;
             for (int j = 0; j < symptoms.size(); j++) {

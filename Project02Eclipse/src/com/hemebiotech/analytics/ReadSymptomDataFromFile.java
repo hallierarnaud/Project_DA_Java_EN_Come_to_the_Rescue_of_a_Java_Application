@@ -24,29 +24,28 @@ public class ReadSymptomDataFromFile implements ISymptomReader {
 	 * @return an ArrayList of the symptoms read in the source file
 	 */
 
-	// Enable to override the method GetSymptoms()
 	@Override
 	public List<String> getSymptoms() {
 		ArrayList<String> result = new ArrayList<String>();
 
 		// Check that the input stream is not null
 		if (filepath != null) {
-			// Catch the exception generated when the input stream can't be open
+
 			try {
-				// Read text from a character-input stream, buffering characters so as to provide
-				// for the efficient reading of characters, arrays, and lines
+				// Read text from an input stream
 				BufferedReader reader = new BufferedReader (new FileReader(filepath));
 				String line = reader.readLine();
 				
-				// Add the line from the input stream to the ArrayList
+				// Add lines from the input stream to an ArrayList
 				while (line != null) {
 					result.add(line);
 					line = reader.readLine();
 				}
 
-				// Close the stream and releases any system resources associated with it
 				reader.close();
 
+			// Catch the exception generated when the input stream can't be open
+			// and introduce a fail fast
 			} catch (IOException e) {
 				System.err.println("Impossible de lire les donnees sources.");
 				return null;
